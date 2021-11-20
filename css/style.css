@@ -26,6 +26,7 @@ p{
 }
 .text-accent{
     font-weight: 800;
+    color: var(--third-dark-color);
 }
 /* Layout */
 .calculator-page{
