@@ -1,3 +1,9 @@
+let darkmode = localStorage.getItem("darkmode")
+
+const themeBtn = document.getElementById("theme-btn")
+const lightInput = document.querySelectorAll(".light-input")
+const lightBtn = document.querySelectorAll(".light-btn")
+
 const milesEl = document.getElementById("miles")
 const workingHoursEl = document.getElementById("working-hours")
 const milesCalcBtn = document.getElementById("miles-calculate")
@@ -13,6 +19,44 @@ let baseSalary = 0
 let bonus = 0
 let notWorkedHours = 0
 let paymentResult = 0
+
+function enableDarkMode(){
+    document.body.classList.add("dark-color")
+    for (i = 0; i < lightInput.length; i++){
+        lightInput[i].classList.add("dark-input")
+    }
+    for (i = 0; i < lightBtn.length; i++){
+        lightBtn[i].classList.add("dark-btn")
+    }
+
+    localStorage.setItem("darkmode", "1")
+}
+
+function disableDarkMode(){
+    document.body.classList.remove("dark-color")
+    for (i = 0; i < lightInput.length; i++){
+        lightInput[i].classList.remove("dark-input")
+    }
+    for (i = 0; i < lightBtn.length; i++){
+        lightBtn[i].classList.remove("dark-btn")
+    }
+
+    localStorage.setItem("darkmode", "0")
+}
+
+if (JSON.parse(darkmode)){
+    enableDarkMode()
+}
+
+themeBtn.addEventListener("click", function(){
+    darkmode = localStorage.getItem("darkmode")
+    if (JSON.parse(darkmode)){
+    disableDarkMode()
+    } else{
+        enableDarkMode()
+    }
+    
+})
 
 milesCalcBtn.addEventListener("click", function(){
     if (milesEl.valueAsNumber && workingHoursEl.valueAsNumber){

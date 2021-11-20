@@ -1,7 +1,14 @@
 :root{
-    --primary-dark-color: #252525;
-    --secondary-dark-color: #fff;
-    --third-dark-color: #4E9F3D;
+    /* Light scheme */
+    --light-color: #fff;
+    --default-state-light-color: #252525;
+    --accent-light-color: #4E9F3D;
+
+    /* Dark scheme */
+    --dark-color: #252525;
+    --default-state-dark-color: #fff;
+    --accent-dark-color: #5fc44b;
+
 }
 html, 
 body{
@@ -12,7 +19,6 @@ body{
     margin: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
-    color: #fff;
 }
 /* Typography */
 h1, h2{
@@ -20,27 +26,22 @@ h1, h2{
     text-align: center;
     margin: 0;
     margin-bottom: 10px;
+    padding: 7px 0;
+    
 }
 p{
     margin: 0;
-}
-.text-accent{
-    font-weight: 800;
-    color: var(--third-dark-color);
 }
 /* Layout */
 .calculator-page{
     display: grid;
     height: 100%;
 }
-.primary-dark-color h2{
-    margin-top: 10px;
-}
 .content-width{
     display: grid;
     margin: 0 auto;
-    padding: 10px;
-
+    padding: 10px 0;
+    
     justify-items: center;
 }
 .btn{
@@ -49,60 +50,69 @@ p{
     border-radius: 7px;
     transition: all 300ms ease-in-out;
 }
-.primary-btn{
-    background-color: var(--primary-dark-color);
-    color: #fff;
-}
-.inverse-btn{
-    background-color: var(--secondary-dark-color);
-    color: black;
-}
-.btn:hover,
-.btn:focus{
-    background-color: var(--third-dark-color);
-    color: #fff;
-}
 
 .input::-webkit-outer-spin-button,
 .input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
 .input{
     padding: 10px 30px;
     margin-bottom: 10px;
     border: none;
     transition: all 300ms linear;
-
+    
     text-align: center;
     font-size: 1.2rem;       
 }
-.primary-input{
-    border-bottom: solid var(--primary-dark-color) 1.5px;
+
+/* Colors General */
+
+
+.text-accent{
+    font-weight: 800;
+    color: var(--accent-light-color);
 }
-.primary-input:focus, 
-.primary-input:active{
+.btn:hover,
+.btn:focus{
+    background-color: var(--accent-light-color);
+    color: #fff;
     outline: none;
-    border-bottom: solid var(--third-dark-color) 1.5px;
 }
 
-.secondary-input{
-    background-color: var(--primary-dark-color);
-    border-bottom: solid var(--secondary-dark-color) 1.5px;
-    color: white;
-}
-.secondary-input:focus, 
-.secondary-input:active{
-    outline: none;
-    border-bottom: solid var(--third-dark-color) 1.5px;
+/* Light */
+
+.light-color{
+    background-color: var(--light-color);
+    color: var(--default-state-light-color);
 }
 
-/* Colors */
-.primary-dark-color{
-    background-color: var(--primary-dark-color);
+.light-input{
+    border-bottom: solid var(--default-state-light-color) 1.5px;
+    background-color: var(--light-color);
+}
+.light-input:focus, 
+.light-input:active{
+    outline: none;
+    border-bottom: solid var(--accent-light-color) 1.5px;
+}
+.light-btn{
+    background-color: var(--default-state-light-color);
+    color: var(--light-color);
+}
+
+/* Dark */
+.dark-color{
+    background-color: var(--dark-color);
+    color: var(--default-state-dark-color);
+}
+
+.dark-input{
+    border-bottom: solid var(--default-state-dark-color) 1.5px;
+    background-color: var(--dark-color);
     color: #fff;
 }
-.secondary-dark-color{
-    background-color: var(--secondary-dark-color);
-    color: black;
+.dark-btn{
+    background-color: var(--default-state-dark-color);
+    color: var(--dark-color);
 }

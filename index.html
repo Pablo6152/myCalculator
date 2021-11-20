@@ -4,21 +4,23 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
-    
+    <link rel="shortcut icon" href="https://www.svgrepo.com/show/8368/calculator.svg" type="image/x-icon">
+
     <link rel="stylesheet" href="./css/style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>My calculator</title>
 </head>
 <body>
     <div class="calculator-page">
 
-        <header class="primary-dark-color">
+        <header>
             <div class="content-width">
                 <h1>The <span class="text-accent">money</span> calculator</h1>
+                <button id="theme-btn" class="btn light-btn">Dark mode!</button>
             </div>
         </header>
-        <section class="secondary-dark-color">
+        <section>
             <div class="content-width">
     
                 <div class="calc-item">
@@ -27,15 +29,15 @@
     
                 <div class="calc-item">
                     <p>Your miles:</p>
-                    <input type="number" class="input primary-input"  id="miles" placeholder="E.g. 880">
+                    <input type="number" class="input light-input"  id="miles" placeholder="E.g. 880">
                 </div>
     
                 <div class="calc-item">
                     <p>Your weekly working hours:</p>
-                    <input type="number" class="input primary-input" id="working-hours" placeholder="E.g. 48">
+                    <input type="number" class="input light-input" id="working-hours" placeholder="E.g. 48">
                 </div>
     
-                <button id="miles-calculate" class="btn primary-btn">Calculate</button>
+                <button id="miles-calculate" class="btn light-btn">Calculate</button>
     
                 <div id="miles-result"></div>
     
@@ -44,31 +46,31 @@
         </section>
     
     
-        <section class="primary-dark-color">
+        <section>
             <div class="content-width">
                 <h2>Calculate your <span class="text-accent"> approximate payment </span>  here</h2>
     
                 <div class="calc-item">
                     <p>Your weekly working hours:</p>
-                    <input type="number" class="input secondary-input" id="base-salary" placeholder="E.g. 48">
+                    <input type="number" class="input light-input" id="base-salary" placeholder="E.g. 48">
                 </div>
     
                 <div class="calc-item">
                     <p>Your bonus %:</p>
-                    <input type="number" class="input secondary-input" id="bonus" placeholder="E.g. 40.80">
+                    <input type="number" class="input light-input" id="bonus" placeholder="E.g. 40.80">
                 </div>
     
                 <div class="calc-item">
                     <p>Any not worked hours?:</p>
-                    <input type="number" class="input secondary-input" id="not-worked-hours" placeholder="E.g. 5">
+                    <input type="number" class="input light-input" id="not-worked-hours" placeholder="E.g. 5">
                 </div>
     
-                <button id="payment-calculate" class="btn secondary-btn">Calculate</button>
+                <button id="payment-calculate" class="btn light-btn">Calculate</button>
     
                 <div id="payment-result"></div>
             </div>
         </section>
-</div>
+    </div>
 
     <script src="./js/index.js"></script>
 </body>
