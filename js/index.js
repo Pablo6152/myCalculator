@@ -53,7 +53,8 @@ function disableDarkMode(){
 
 if (JSON.parse(darkmode)){
     enableDarkMode()
-}
+} else {themeBtn.innerHTML = `Dark mode is 
+<span class="text-accent2">OFF</span>!`}
 
 themeBtn.addEventListener("click", function(){
     darkmode = localStorage.getItem("darkmode")
