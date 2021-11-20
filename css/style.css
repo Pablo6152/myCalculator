@@ -1,0 +1,107 @@
+:root{
+    --primary-dark-color: #252525;
+    --secondary-dark-color: #fff;
+    --third-dark-color: #4E9F3D;
+}
+html, 
+body{
+    height: 100%;
+    width: 100%;
+}
+body{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+}
+/* Typography */
+h1, h2{
+    font-weight: 300;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 10px;
+}
+p{
+    margin: 0;
+}
+.text-accent{
+    font-weight: 800;
+}
+/* Layout */
+.calculator-page{
+    display: grid;
+    height: 100%;
+}
+.primary-dark-color h2{
+    margin-top: 10px;
+}
+.content-width{
+    display: grid;
+    margin: 0 auto;
+    padding: 10px;
+
+    justify-items: center;
+}
+.btn{
+    padding: 10px 23px;
+    border: none;
+    border-radius: 7px;
+    transition: all 300ms ease-in-out;
+}
+.primary-btn{
+    background-color: var(--primary-dark-color);
+    color: #fff;
+}
+.inverse-btn{
+    background-color: var(--secondary-dark-color);
+    color: black;
+}
+.btn:hover,
+.btn:focus{
+    background-color: var(--third-dark-color);
+    color: #fff;
+}
+
+.input::-webkit-outer-spin-button,
+.input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.input{
+    padding: 10px 30px;
+    margin-bottom: 10px;
+    border: none;
+    transition: all 300ms linear;
+
+    text-align: center;
+    font-size: 1.2rem;       
+}
+.primary-input{
+    border-bottom: solid var(--primary-dark-color) 1.5px;
+}
+.primary-input:focus, 
+.primary-input:active{
+    outline: none;
+    border-bottom: solid var(--third-dark-color) 1.5px;
+}
+
+.secondary-input{
+    background-color: var(--primary-dark-color);
+    border-bottom: solid var(--secondary-dark-color) 1.5px;
+    color: white;
+}
+.secondary-input:focus, 
+.secondary-input:active{
+    outline: none;
+    border-bottom: solid var(--third-dark-color) 1.5px;
+}
+
+/* Colors */
+.primary-dark-color{
+    background-color: var(--primary-dark-color);
+    color: #fff;
+}
+.secondary-dark-color{
+    background-color: var(--secondary-dark-color);
+    color: black;
+}
