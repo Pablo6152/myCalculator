@@ -21,6 +21,9 @@ let notWorkedHours = 0
 let paymentResult = 0
 
 function enableDarkMode(){
+    themeBtn.innerHTML = `Dark mode is 
+    <span class="text-accent2">ON</span>!`
+    
     document.body.classList.add("dark-color")
     for (i = 0; i < lightInput.length; i++){
         lightInput[i].classList.add("dark-input")
@@ -30,9 +33,13 @@ function enableDarkMode(){
     }
 
     localStorage.setItem("darkmode", "1")
+    
 }
 
 function disableDarkMode(){
+    themeBtn.innerHTML = `Dark mode is 
+    <span class="text-accent2">OFF</span>!`
+
     document.body.classList.remove("dark-color")
     for (i = 0; i < lightInput.length; i++){
         lightInput[i].classList.remove("dark-input")
@@ -51,7 +58,7 @@ if (JSON.parse(darkmode)){
 themeBtn.addEventListener("click", function(){
     darkmode = localStorage.getItem("darkmode")
     if (JSON.parse(darkmode)){
-    disableDarkMode()
+        disableDarkMode()
     } else{
         enableDarkMode()
     }

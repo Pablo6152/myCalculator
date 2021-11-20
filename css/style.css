@@ -9,6 +9,7 @@
     --default-state-dark-color: #fff;
     --accent-dark-color: #5fc44b;
 
+    --activated-status: #1d81ec;
 }
 html, 
 body{
@@ -68,11 +69,17 @@ p{
 
 /* Colors General */
 
-
-.text-accent{
+.text-accent,
+.text-accent2{
     font-weight: 800;
+}
+.text-accent{
     color: var(--accent-light-color);
 }
+.text-accent2{
+    color: var(--activated-status);
+}
+
 .btn:hover,
 .btn:focus{
     background-color: var(--accent-light-color);
