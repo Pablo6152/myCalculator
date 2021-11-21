@@ -1,8 +1,9 @@
 let darkmode = localStorage.getItem("darkmode")
+let disclaimerAccepted = localStorage.getItem("disclaimerAccepted")
+
 
 const themeBtn = document.getElementById("theme-btn")
-const lightInput = document.querySelectorAll(".light-input")
-const lightBtn = document.querySelectorAll(".light-btn")
+const disclaimerBtn = document.getElementById("accept-disclaimer-btn")
 
 const milesEl = document.getElementById("miles")
 const workingHoursEl = document.getElementById("working-hours")
@@ -20,52 +21,61 @@ let bonus = 0
 let notWorkedHours = 0
 let paymentResult = 0
 
-function enableDarkMode(){
-    themeBtn.innerHTML = `Dark mode is 
-    <span class="text-accent2">ON</span>!`
-    
-    document.body.classList.add("dark-color")
-    for (i = 0; i < lightInput.length; i++){
-        lightInput[i].classList.add("dark-input")
-    }
-    for (i = 0; i < lightBtn.length; i++){
-        lightBtn[i].classList.add("dark-btn")
-    }
+// "baseSalaryEl && workingHoursEl" inputs are redundant, You might be able to simplify the funcionality
+// Maybe predifining the base salary but letting the user modify it might help
 
-    localStorage.setItem("darkmode", "1")
-    
-}
-
-function disableDarkMode(){
-    themeBtn.innerHTML = `Dark mode is 
-    <span class="text-accent2">OFF</span>!`
-
-    document.body.classList.remove("dark-color")
-    for (i = 0; i < lightInput.length; i++){
-        lightInput[i].classList.remove("dark-input")
-    }
-    for (i = 0; i < lightBtn.length; i++){
-        lightBtn[i].classList.remove("dark-btn")
-    }
-
-    localStorage.setItem("darkmode", "0")
-}
-
+// When page loads
 if (JSON.parse(darkmode)){
-    enableDarkMode()
-} else {themeBtn.innerHTML = `Dark mode is 
-<span class="text-accent2">OFF</span>!`}
+    setTheme(1)
+} else {themeBtn.textContent = `brightness_7`}
 
-themeBtn.addEventListener("click", function(){
-    darkmode = localStorage.getItem("darkmode")
-    if (JSON.parse(darkmode)){
-        disableDarkMode()
-    } else{
-        enableDarkMode()
-    }
-    
+if (JSON.parse(disclaimerAccepted)){
+    closeModal()
+}
+
+// Modals
+disclaimerBtn.addEventListener("click", function(){
+    closeModal()
+    localStorage.setItem("disclaimerAccepted", "1")
 })
 
+function closeModal(){
+    document.getElementById("disclaimer-box").style.display = "none"
+}
+
+
+// Dark mode
+function setTheme(theme) {
+    let root = document.documentElement;
+    if (theme === 0) {
+        root.style.setProperty('--primary-color', '#fff');
+        root.style.setProperty('--secondary-color', '#252525');
+        root.style.setProperty('--accent-color', '#4E9F3D'); 
+        
+        localStorage.setItem("darkmode", "0")
+
+        themeBtn.textContent = `brightness_7`
+    } else if (theme === 1) {
+        root.style.setProperty('--primary-color', '#252525');
+        root.style.setProperty('--secondary-color', '#fff');
+        root.style.setProperty('--accent-color', '#5fc44b'); 
+        
+        localStorage.setItem("darkmode", "1")
+
+        themeBtn.textContent = `brightness_2`
+    }
+}
+themeBtn.addEventListener("click", function(){
+    darkmode = localStorage.getItem("darkmode")
+    if (JSON.parse(darkmode) !== 1){
+        setTheme(1)
+    } else if (JSON.parse(darkmode) !== 0){
+        setTheme(0)
+    }
+})
+
+
+// Calculation functions
 milesCalcBtn.addEventListener("click", function(){
     if (milesEl.valueAsNumber && workingHoursEl.valueAsNumber){
     milesResult = Math.floor( ( (milesEl.valueAsNumber * 14 / 30) / 96) * (workingHoursEl.valueAsNumber * 2) )

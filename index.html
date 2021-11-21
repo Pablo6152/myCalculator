@@ -5,72 +5,80 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="https://www.svgrepo.com/show/8368/calculator.svg" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <link rel="stylesheet" href="./css/style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My calculator</title>
 </head>
-<body>
-    <div class="calculator-page">
-
-        <header>
-            <div class="content-width">
-                <h1>The <span class="text-accent">money</span> calculator</h1>
-                <button id="theme-btn" class="btn light-btn">Dark mode!</button>
-            </div>
-        </header>
-        <section>
-            <div class="content-width">
-    
-                <div class="calc-item">
-                    <h2>Calculate your <span class="text-accent">Miles</span> to money here</h2>
-                </div>
-    
-                <div class="calc-item">
-                    <p>Your miles:</p>
-                    <input type="number" class="input light-input"  id="miles" placeholder="E.g. 880">
-                </div>
-    
-                <div class="calc-item">
-                    <p>Your weekly working hours:</p>
-                    <input type="number" class="input light-input" id="working-hours" placeholder="E.g. 48">
-                </div>
-    
-                <button id="miles-calculate" class="btn light-btn">Calculate</button>
-    
-                <div id="miles-result"></div>
-    
-    
-            </div>
-        </section>
-    
-    
-        <section>
-            <div class="content-width">
-                <h2>Calculate your <span class="text-accent"> approximate payment </span>  here</h2>
-    
-                <div class="calc-item">
-                    <p>Your weekly working hours:</p>
-                    <input type="number" class="input light-input" id="base-salary" placeholder="E.g. 48">
-                </div>
-    
-                <div class="calc-item">
-                    <p>Your bonus %:</p>
-                    <input type="number" class="input light-input" id="bonus" placeholder="E.g. 40.80">
-                </div>
-    
-                <div class="calc-item">
-                    <p>Any not worked hours?:</p>
-                    <input type="number" class="input light-input" id="not-worked-hours" placeholder="E.g. 5">
-                </div>
-    
-                <button id="payment-calculate" class="btn light-btn">Calculate</button>
-    
-                <div id="payment-result"></div>
-            </div>
-        </section>
+<body class="primary-color">
+    <div id="disclaimer-box">
+        <div id="disclaimer-content">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa explicabo quia perferendis, quam laboriosam dolores saepe commodi quaerat assumenda dignissimos illum dolorem odio corporis non reiciendis cumque laborum tenetur? Delectus?</p>
+            <button id="accept-disclaimer-btn" class="btn primary-btn">Accept</button>
+        </div>
     </div>
+
+    <aside class="theme-box">
+        <i id="theme-btn" class="material-icons darkmode-toggle">brightness_2</i>
+    </aside>
+
+    <header>
+        <div class="content-width">
+            <h1>🔥The <span class="text-accent">money</span> calculator🔥</h1>
+        </div>
+    </header>
+    <section>
+        <div class="content-width">
+
+            <div class="calc-item">
+                <h2>Calculate your <span class="text-accent">Miles</span> to money here:</h2>
+            </div>
+
+            <div class="calc-item">
+                <p>Your miles:</p>
+                <input type="number" class="input primary-input"  id="miles" placeholder="E.g. 880">
+            </div>
+
+            <div class="calc-item">
+                <p>Your weekly working hours:</p>
+                <input type="number" class="input primary-input" id="working-hours" placeholder="E.g. 48">
+            </div>
+
+            <button id="miles-calculate" class="btn primary-btn">Calculate</button>
+
+            <div id="miles-result"></div>
+
+
+        </div>
+    </section>
+
+
+    <section>
+        <div class="content-width">
+            <h2>Calculate your <span class="text-accent"> approximate payment </span>  here:</h2>
+
+            <div class="calc-item">
+                <p>Your weekly working hours:</p>
+                <input type="number" class="input primary-input" id="base-salary" placeholder="E.g. 48">
+            </div>
+
+            <div class="calc-item">
+                <p>Your bonus %:</p>
+                <input type="number" class="input primary-input" id="bonus" placeholder="E.g. 40.80">
+            </div>
+
+            <div class="calc-item">
+                <p>Any not worked hours?:</p>
+                <input type="number" class="input primary-input" id="not-worked-hours" placeholder="E.g. 5">
+            </div>
+
+            <button id="payment-calculate" class="btn primary-btn">Calculate</button>
+
+            <div id="payment-result"></div>
+        </div>
+    </section>
 
     <script src="./js/index.js"></script>
 </body>

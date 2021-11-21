@@ -1,20 +1,19 @@
 :root{
     /* Light scheme */
-    --light-color: #fff;
-    --default-state-light-color: #252525;
-    --accent-light-color: #4E9F3D;
+    --primary-color: #fff;
+    --secondary-color: #252525;
+    --accent-color: #4E9F3D;
 
-    /* Dark scheme */
+    /* Dark scheme
     --dark-color: #252525;
     --default-state-dark-color: #fff;
     --accent-dark-color: #5fc44b;
-
-    --activated-status: #1d81ec;
+    --activated-status: #1d81ec;  */
 }
-html, 
+/* General */
+html,
 body{
     height: 100%;
-    width: 100%;
 }
 body{
     margin: 0;
@@ -27,99 +26,110 @@ h1, h2{
     text-align: center;
     margin: 0;
     margin-bottom: 10px;
-    padding: 7px 0;
-    
+}
+h1{
+    border-top: solid var(--secondary-color) 1px;
+    border-bottom: solid var(--secondary-color) 1px;
 }
 p{
     margin: 0;
 }
 /* Layout */
-.calculator-page{
-    display: grid;
-    height: 100%;
+.theme-box{
+    position: fixed;
+    bottom: 0;
+}
+.material-icons{
+    cursor: pointer;
+    font-size: 3rem;
 }
 .content-width{
     display: grid;
     margin: 0 auto;
-    padding: 10px 0;
+    padding: 5px 0;
     
     justify-items: center;
 }
-.btn{
-    padding: 10px 23px;
+.btn,
+.input{
     border: none;
-    border-radius: 7px;
     transition: all 300ms ease-in-out;
+    font-size: 1.1rem;
 }
-
+.btn{
+    margin: 0;
+    padding: 10px 23px;
+    border-radius: 7px;
+}
+.input{
+    padding: 10px 30px;
+    margin-bottom: 10px; 
+    text-align: center;
+}
 .input::-webkit-outer-spin-button,
 .input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
-.input{
-    padding: 10px 30px;
-    margin-bottom: 10px;
-    border: none;
-    transition: all 300ms linear;
-    
-    text-align: center;
-    font-size: 1.2rem;       
+
+/* Modals - Layout */
+#disclaimer-box{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.762); /* Black w/ opacity */
+}
+#disclaimer-content {
+    display: grid;
+
+    background-color: var(--primary-color);
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 7px;
+    width: 85%; /* Could be more or less, depending on screen size */
+    align-items: center;
+}
+#disclaimer-box .btn {
+    width: 40%;
+    margin: 2% auto;
 }
 
 /* Colors General */
-
-.text-accent,
-.text-accent2{
+.text-accent{
     font-weight: 800;
 }
-.text-accent{
-    color: var(--accent-light-color);
-}
+.text-accent,
 .text-accent2{
-    color: var(--activated-status);
+    color: var(--accent-color);
 }
-
 .btn:hover,
 .btn:focus{
-    background-color: var(--accent-light-color);
+    background-color: var(--accent-color);
     color: #fff;
     outline: none;
 }
-
-/* Light */
-
-.light-color{
-    background-color: var(--light-color);
-    color: var(--default-state-light-color);
-}
-
-.light-input{
-    border-bottom: solid var(--default-state-light-color) 1.5px;
-    background-color: var(--light-color);
-}
-.light-input:focus, 
-.light-input:active{
+.input:focus, 
+.input:active{
     outline: none;
-    border-bottom: solid var(--accent-light-color) 1.5px;
+    border-bottom: solid var(--accent-color) 1.5px;
 }
-.light-btn{
-    background-color: var(--default-state-light-color);
-    color: var(--light-color);
+.primary-color{
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
 }
-
-/* Dark */
-.dark-color{
-    background-color: var(--dark-color);
-    color: var(--default-state-dark-color);
+.primary-input{
+    border-bottom: solid var(--secondary-color) 1.5px;
+    background-color: var(--primary-color);
 }
-
-.dark-input{
-    border-bottom: solid var(--default-state-dark-color) 1.5px;
-    background-color: var(--dark-color);
-    color: #fff;
+.primary-btn{
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
 }
-.dark-btn{
-    background-color: var(--default-state-dark-color);
-    color: var(--dark-color);
+.darkmode-toggle{
+    color: var(--secondary-color);
 }
