@@ -3,12 +3,6 @@
     --primary-color: #fff;
     --secondary-color: #252525;
     --accent-color: #4E9F3D;
-
-    /* Dark scheme
-    --dark-color: #252525;
-    --default-state-dark-color: #fff;
-    --accent-dark-color: #5fc44b;
-    --activated-status: #1d81ec;  */
 }
 /* General */
 html,
@@ -45,6 +39,7 @@ p{
 }
 .content-width{
     display: grid;
+
     margin: 0 auto;
     padding: 5px 0;
     
@@ -125,6 +120,7 @@ p{
 .primary-input{
     border-bottom: solid var(--secondary-color) 1.5px;
     background-color: var(--primary-color);
+    color: var(--secondary-color);
 }
 .primary-btn{
     background-color: var(--secondary-color);
