@@ -10,37 +10,42 @@
     <link rel="stylesheet" href="./css/style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My calculator</title>
+    <title>Payment</title>
 </head>
-<body class="secondary-color">
-    <div id="disclaimer-box">
-        <div id="disclaimer-content">
-            <p>This web-app is not intended for commercial use, it's totally free and have been created just for fun,
-                if there is a problem with this app you can comunicate with me and see what we can do at:
-            </p>
-            <p class="email-box">pablocisnerosrojas@gmail.com</p>
-            <button id="accept-disclaimer-btn" class="btn primary-btn">Accept</button>
-        </div>
-    </div>
-
+<body>
     <header class="nav-header">
         <div class="nav-container width-container">
             <h1>The <span class="text-accent">money</span> calculator</h1>
             <nav>
                 <ul class="nav-links flex-type">
                     <i id="theme-btn" class="material-icons darkmode-toggle">brightness_2</i>
-                    <li><a href="./index.html" class="current-page">Home</a></li>
+                    <li><a href="./index.html">Home</a></li>
                     <li><a href="./miles.html">Miles</a></li>
-                    <li><a href="./payment.html">Payment</a></li>
+                    <li><a href="./payment.html" class="current-page">Payment</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <a href="./miles.html">Miles</a>
-    <a href="./payment.html">Payment</a>
 
-    <script src="./js/index.js"></script>
+    <section class="width-container primary-color section-style">
+        <h2>Calculate your <span class="text-accent"> approximate payment</span>:</h2>
+        <div class="calc-item">
+            <p>Your weekly work hours:</p>
+            <input type="number" class="input input-color" id="base-salary" placeholder="E.g. 48">
+        </div>
+        <div class="calc-item">
+            <p>Your bonus %:</p>
+            <input type="number" class="input input-color" id="bonus" placeholder="E.g. 40.80">
+        </div>
+        <div class="calc-item">
+            <p>Any not worked hours?:</p>
+            <input type="number" class="input input-color" id="not-worked-hours" placeholder="E.g. 5">
+        </div>
+        <button id="payment-calculate" class="btn primary-btn">Calculate</button>
+        <div class="result-box" id="payment-result"></div>
+    </section>
     <script src="./js/theme.js"></script>
+    <script src="./js/payment.js"></script>
 </body>
 </html>

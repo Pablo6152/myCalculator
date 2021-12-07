@@ -7,79 +7,125 @@
     --tertiary-accent-color: #D32F2F;
 }
 /* General */
-html,
-body{
-    height: 100%;
+* { 
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+     box-sizing: border-box; 
 }
 body{
     margin: 0;
-    box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
     color: var(--text-color);
+    background: var(--secondary-color);
 }
 /* Typography */
+h1,
+h2,
+p,
+ul,
+li{
+    margin: 0;
+    padding: 0;
+}
 h1, h2{
     font-weight: 300;
     text-align: center;
-    margin: 0;
-    margin-bottom: 10px;
 }
-p{
+.section-style h2{
+    margin-bottom: .5em;
+}
+/* Nav */
+.nav-header{
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border-bottom: solid 1px var(--text-color);
+}
+.nav-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+nav li{
+    list-style: none;
+    margin-bottom: 0.3em;
+}
+nav ul{
+    flex-direction: column;
     margin: 0;
+}
+nav a{
+    text-decoration: none;
+    color: var(--text-color);
+}
+nav a:visited{
+    color: inherit;
+}
+nav a:hover,
+nav a:focus{
+    color: var(--primary-accent-color);
+    outline: none;
+}
+.current-page{
+    border-bottom: 1px solid var(--primary-accent-color);
+    color: var(--primary-accent-color);
+}
+.current-page:visited{
+    color: var(--primary-accent-color);
+}
+/* NavBar dropdown */
+@media (orientation: landscape) {
+    .nav-container{
+        flex-direction: row;
+    }
+    nav li{
+        margin-left: 1em;
+    }
+    nav ul{
+        flex-direction: row;
+    }
+    .nav-links{
+        display: flex;
+    }
+
 }
 /* Layout */
-.container{
-    display: flex;
-    flex-direction: column;
-    width: 90%;
+.width-container{
+    max-width: 65%;
     margin: 0 auto;
-    align-items: space-between;
 }
 .section-style{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     border: solid 1px var(--text-color);
-    margin: 2em 0;
-    padding: 1em;
-}
-@media (orientation: landscape){
-    .container{
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
-    }
-    .section-style{
-        margin: 0;
-    }
-}
-.theme-box{
-    position: fixed;
-    bottom: 0;
+    padding: 0.5em;
+    margin-top: 1em;
+    border-radius: 7px;
 }
 .material-icons{
     cursor: pointer;
-    font-size: 3rem;
-}
-.content-width{
-    display: grid;
-    justify-items: center;
 }
 .btn,
 .input{
     border: none;
     transition: all 300ms ease-in-out;
-    font-size: 1.1rem;
+    font-size: 1.0rem;
+    display: block;
 }
 .btn{
     margin: 0;
-    padding: 10px 23px;
+    padding: 0.6em 1.2em;
     border-radius: 7px;
     outline: 0;
     border: 0;
     cursor: pointer;
-    
 }
 .input{
-    padding: 10px 30px;
-    margin-bottom: 10px; 
+    padding: 0.6em 1em;
+    margin-bottom: 0.6em;
     text-align: center;
 }
 .input::-webkit-outer-spin-button,
@@ -95,9 +141,6 @@ p{
     font-size: 0.9em;
     padding: 0.3em 0.7em;
     transition: all 0.5s ease 0s;
-}
-.section-style{
-    border-radius: 7px;
 }
 /* Modals - Layout */
 #disclaimer-box{
@@ -116,7 +159,7 @@ p{
     
     background-color: var(--primary-color);
     margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
+    padding: 1.3em;
     border: 2px solid var(--secondary-color);
     border-radius: 7px;
     width: 85%; /* Could be more or less, depending on screen size */
@@ -138,11 +181,6 @@ p{
 }
 
 /* Colors General */
-header{
-    background: var(--primary-color);
-    border-bottom: solid var(--text-color) 1px;
-    margin-bottom: 1em;
-}
 .gray-text{
     color: gray;
 }
@@ -159,12 +197,12 @@ header{
     color: #fff;
     outline: none;
     box-shadow: rgb(80 63 205 / 50%) 0px 1px 35px;
-    transition: all 0.1s ease 0s;
 }
-.input:focus, 
+.input:focus,
 .input:active{
     outline: none;
     border-bottom: solid var(--primary-accent-color) 1.5px;
+    color: var(--text-color);
 }
 .primary-color{
     background-color: var(--primary-color);
