@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My calculator</title>
 </head>
-<body class="primary-color">
+<body class="secondary-color">
     <div id="disclaimer-box">
         <div id="disclaimer-content">
             <p>This web-app is not intended for commercial use, it's totally free and have been created just for fun,
@@ -25,49 +25,44 @@
 
     <aside class="theme-box">
         <i id="theme-btn" class="material-icons darkmode-toggle">brightness_2</i>
+        <p class="gray-text">Beta</p>
     </aside>
 
     <header>
-        <div class="content-width">
             <h1>🔥The <span class="text-accent">money</span> calculator🔥</h1>
-        </div>
     </header>
     <div class="container">
-        <section>
-            <div class="content-width">
+        <section class="content-width primary-color section-style">
                 <div class="calc-item">
-                    <h2>Calculate your <span class="text-accent">Miles</span> to money here:</h2>
+                    <h2>Calculate your <span class="text-accent">Miles</span> to money:</h2>
                 </div>
                 <div class="calc-item">
                     <p>Your miles:</p>
-                    <input type="number" class="input primary-input"  id="miles" placeholder="E.g. 880">
+                    <input type="number" class="input input-color"  id="miles" placeholder="E.g. 880">
                 </div>
                 <div class="calc-item">
                     <p>Your weekly working hours:</p>
-                    <input type="number" class="input primary-input" id="working-hours" placeholder="E.g. 48">
+                    <input type="number" class="input input-color" id="working-hours" placeholder="E.g. 48">
                 </div>
                 <button id="miles-calculate" class="btn primary-btn">Calculate</button>
                 <div class="result-box" id="miles-result"></div>
-            </div>
         </section>
-        <section>
-            <div class="content-width">
-                <h2>Calculate your <span class="text-accent"> approximate payment </span>  here:</h2>
+        <section class="content-width primary-color section-style">
+                <h2>Calculate your <span class="text-accent"> approximate payment</span>:</h2>
                 <div class="calc-item">
                     <p>Your weekly working hours:</p>
-                    <input type="number" class="input primary-input" id="base-salary" placeholder="E.g. 48">
+                    <input type="number" class="input input-color" id="base-salary" placeholder="E.g. 48">
                 </div>
                 <div class="calc-item">
                     <p>Your bonus %:</p>
-                    <input type="number" class="input primary-input" id="bonus" placeholder="E.g. 40.80">
+                    <input type="number" class="input input-color" id="bonus" placeholder="E.g. 40.80">
                 </div>
                 <div class="calc-item">
                     <p>Any not worked hours?:</p>
-                    <input type="number" class="input primary-input" id="not-worked-hours" placeholder="E.g. 5">
+                    <input type="number" class="input input-color" id="not-worked-hours" placeholder="E.g. 5">
                 </div>
                 <button id="payment-calculate" class="btn primary-btn">Calculate</button>
                 <div class="result-box" id="payment-result"></div>
-            </div>
         </section>
     </div>
 

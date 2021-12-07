@@ -1,8 +1,10 @@
 :root{
-    /* Light scheme */
-    --primary-color: #fff;
-    --secondary-color: #252525;
-    --accent-color: #4E9F3D;
+    --primary-color: #f5f5fa;
+    --secondary-color: #b6b7d5;
+    --text-color: #121212;
+    --primary-accent-color: #4E9F3D;
+    --secondary-accent-color: #303F9F;
+    --tertiary-accent-color: #D32F2F;
 }
 /* General */
 html,
@@ -13,6 +15,7 @@ body{
     margin: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
+    color: var(--text-color);
 }
 /* Typography */
 h1, h2{
@@ -21,22 +24,8 @@ h1, h2{
     margin: 0;
     margin-bottom: 10px;
 }
-h1{
-    border-top: solid var(--secondary-color) 1px;
-    border-bottom: solid var(--secondary-color) 1px;
-}
 p{
     margin: 0;
-}
-.email-box{
-    margin-top: 1em;
-    padding: 0.6em;
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-
-    text-align: center;
-    border-radius: 5px;
-    border: solid 2px var(--secondary-color)
 }
 /* Layout */
 .container{
@@ -46,11 +35,19 @@ p{
     margin: 0 auto;
     align-items: space-between;
 }
+.section-style{
+    border: solid 1px var(--text-color);
+    margin: 2em 0;
+    padding: 1em;
+}
 @media (orientation: landscape){
     .container{
         flex-direction: row;
         justify-content: space-between;
         align-items: flex-start;
+    }
+    .section-style{
+        margin: 0;
     }
 }
 .theme-box{
@@ -63,10 +60,6 @@ p{
 }
 .content-width{
     display: grid;
-
-    margin: 0 auto;
-    padding: 5px 0;
-    
     justify-items: center;
 }
 .btn,
@@ -79,6 +72,10 @@ p{
     margin: 0;
     padding: 10px 23px;
     border-radius: 7px;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    
 }
 .input{
     padding: 10px 30px;
@@ -99,6 +96,9 @@ p{
     padding: 0.3em 0.7em;
     transition: all 0.5s ease 0s;
 }
+.section-style{
+    border-radius: 7px;
+}
 /* Modals - Layout */
 #disclaimer-box{
     position: fixed;
@@ -113,7 +113,7 @@ p{
 #disclaimer-content {
     display: flex;
     flex-direction: column;
-
+    
     background-color: var(--primary-color);
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
@@ -126,39 +126,65 @@ p{
     width: 40%;
     margin: 2% auto;
 }
+.email-box{
+    margin-top: 1em;
+    padding: 0.6em;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+
+    text-align: center;
+    border-radius: 5px;
+    border: solid 2px var(--text-color)
+}
 
 /* Colors General */
+header{
+    background: var(--primary-color);
+    border-bottom: solid var(--text-color) 1px;
+    margin-bottom: 1em;
+}
+.gray-text{
+    color: gray;
+}
 .text-accent{
     font-weight: 800;
 }
 .text-accent,
 .text-accent2{
-    color: var(--accent-color);
+    color: var(--primary-accent-color);
 }
 .btn:hover,
 .btn:focus{
-    background-color: var(--accent-color);
+    background-color: var(--primary-accent-color);
     color: #fff;
     outline: none;
+    box-shadow: rgb(80 63 205 / 50%) 0px 1px 35px;
+    transition: all 0.1s ease 0s;
 }
 .input:focus, 
 .input:active{
     outline: none;
-    border-bottom: solid var(--accent-color) 1.5px;
+    border-bottom: solid var(--primary-accent-color) 1.5px;
 }
 .primary-color{
     background-color: var(--primary-color);
-    color: var(--secondary-color);
+    color: var(--text-color);
 }
-.primary-input{
-    border-bottom: solid var(--secondary-color) 1.5px;
+.secondary-color{
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+.input-color{
+    border-bottom: solid var(--text-color) 1.5px;
     background-color: var(--primary-color);
-    color: var(--secondary-color);
+    color: var(--text-color);
 }
 .primary-btn{
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
+    text-shadow: rgb(0 0 0 / 12%) 0px 3px 8px;
+    background: linear-gradient(92.88deg, rgb(69, 94, 181) 9.16%, rgb(86, 67, 204) 43.89%, rgb(103, 63, 215) 64.72%);
+    transition: all 0.5s ease 0s;
+    color: #fff;
 }
 .darkmode-toggle{
-    color: var(--secondary-color);
+    color: var(--text-color);
 }
