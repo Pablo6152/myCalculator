@@ -80,7 +80,7 @@ milesCalcBtn.addEventListener("click", function(){
     if (milesEl.valueAsNumber && workingHoursEl.valueAsNumber){
     milesResult = Math.floor( ( (milesEl.valueAsNumber * 14 / 30) / 96) * (workingHoursEl.valueAsNumber * 2) )
     
-    milesResultEl.innerHTML = `You are going to recieve approximately 
+    milesResultEl.innerHTML = `Approximately 
         <span class="text-accent">${milesResult}$ MXN</span>
          (Mexican Pesos).`
 
@@ -90,12 +90,13 @@ milesCalcBtn.addEventListener("click", function(){
 })
 
 paymentCalcBtn.addEventListener("click", function(){
-    baseSalary = 30.38 * (baseSalaryEl.valueAsNumber * 2)
+    notWorkedHours = 30.38 * notWorkedHoursEl.valueAsNumber
+    baseSalary = 30.38 * (baseSalaryEl.valueAsNumber * 2) - notWorkedHours
+    console.log(baseSalary)
     bonus = baseSalary * (bonusEl.valueAsNumber / 100)
 
     if (notWorkedHoursEl.valueAsNumber){  
-    notWorkedHours = 30.38 * notWorkedHoursEl.valueAsNumber
-    paymentResult = Math.round(baseSalary + bonus - notWorkedHours)
+        paymentResult = Math.round(baseSalary + bonus - notWorkedHours)
     } else {
         paymentResult = Math.round(baseSalary + bonus)
     }

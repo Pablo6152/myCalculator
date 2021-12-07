@@ -28,7 +28,31 @@ h1{
 p{
     margin: 0;
 }
+.email-box{
+    margin-top: 1em;
+    padding: 0.6em;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+
+    text-align: center;
+    border-radius: 5px;
+    border: solid 2px var(--secondary-color)
+}
 /* Layout */
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+    align-items: space-between;
+}
+@media (orientation: landscape){
+    .container{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+}
 .theme-box{
     position: fixed;
     bottom: 0;
@@ -66,7 +90,15 @@ p{
     -webkit-appearance: none;
     margin: 0;
 }
-
+.result-box{
+    margin-top: 1em;
+    background: linear-gradient(92.88deg, rgb(69, 94, 181) 9.16%, rgb(86, 67, 204) 43.89%, rgb(103, 63, 215) 64.72%);
+    color: #fff;
+    border-radius: 6px;
+    font-size: 0.9em;
+    padding: 0.3em 0.7em;
+    transition: all 0.5s ease 0s;
+}
 /* Modals - Layout */
 #disclaimer-box{
     position: fixed;
@@ -79,7 +111,8 @@ p{
     background-color: rgba(0, 0, 0, 0.762); /* Black w/ opacity */
 }
 #disclaimer-content {
-    display: grid;
+    display: flex;
+    flex-direction: column;
 
     background-color: var(--primary-color);
     margin: 15% auto; /* 15% from the top and centered */
