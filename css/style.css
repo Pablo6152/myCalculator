@@ -12,11 +12,18 @@
     -webkit-box-sizing: border-box; 
      box-sizing: border-box; 
 }
+html,
+body{
+    height: 100%;
+}
 body{
     margin: 0;
     font-family: 'Montserrat', sans-serif;
     color: var(--text-color);
     background: var(--secondary-color);
+}
+img{
+    width: 100%;
 }
 /* Typography */
 h1,
@@ -33,6 +40,12 @@ h1, h2{
 }
 .section-style h2{
     margin-bottom: .5em;
+}
+.hero-title{
+    margin-bottom: 0.9em;
+}
+a{
+    text-decoration: none;
 }
 /* Nav */
 .nav-header{
@@ -105,6 +118,48 @@ nav a:focus{
     margin-top: 1em;
     border-radius: 7px;
 }
+.hero-content{
+    display: flex;
+    flex-direction: column;
+    padding: 1em 0;
+}
+.hero-info{
+    text-align: center;
+}
+.hero-btn-section{
+    margin: 0.9em 0;
+}
+.hero-img-section{
+    display: flex;
+    justify-content: center;
+}
+.calc-hero-img{
+    max-width: 50%;
+}
+@media (orientation: landscape) {
+    .hero-content{
+        flex-direction: row;
+    }
+    .hero-info{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        font-size: 1.7rem;
+    }
+    .hero-btn-section{
+        display: flex;
+        justify-content: space-evenly;
+        margin: 0.6em 0;
+    }
+    .hero-img-section{
+        justify-content: flex-end;
+    }
+    .calc-hero-img{
+        max-width: 75%;
+    }
+}
+
+
 .material-icons{
     cursor: pointer;
 }
@@ -114,21 +169,19 @@ nav a:focus{
     transition: all 300ms ease-in-out;
     font-size: 1.0rem;
 }
-.input{
-    width: 100%;
-}
 .btn{
+    display: inline-block;
     margin: 0;
     padding: 0.6em 1.2em;
     border-radius: 7px;
     outline: 0;
-    border: 0;
     cursor: pointer;
 }
 .input{
     padding: 0.6em 1em;
     margin-bottom: 0.6em;
     text-align: center;
+    width: 100%;
 }
 .input::-webkit-outer-spin-button,
 .input::-webkit-inner-spin-button {
@@ -183,6 +236,9 @@ nav a:focus{
 }
 
 /* Colors General */
+.hero{
+    background-color: var(--primary-color);
+}
 .gray-text{
     color: gray;
 }
@@ -195,7 +251,7 @@ nav a:focus{
 }
 .btn:hover,
 .btn:focus{
-    background-color: var(--primary-accent-color);
+    background-color: rgb(86, 67, 204);
     color: #fff;
     outline: none;
     box-shadow: rgb(80 63 205 / 50%) 0px 1px 35px;
@@ -221,9 +277,18 @@ nav a:focus{
 }
 .primary-btn{
     text-shadow: rgb(0 0 0 / 12%) 0px 3px 8px;
-    background: linear-gradient(92.88deg, rgb(69, 94, 181) 9.16%, rgb(86, 67, 204) 43.89%, rgb(103, 63, 215) 64.72%);
+    background: var(--text-color);
     transition: all 0.5s ease 0s;
-    color: #fff;
+    color: var(--primary-color);
+    border: 2px solid var(--text-color);
+}
+.alt-primary-btn{
+    color: var(--text-color);
+    background-color: none;
+    border: 2px solid;
+}
+.hero-btn{
+    border-radius: 15px;
 }
 .darkmode-toggle{
     color: var(--text-color);
