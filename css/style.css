@@ -118,6 +118,17 @@ nav a:focus{
     margin-top: 1em;
     border-radius: 7px;
 }
+.calc-elements{
+    text-align: center;
+}
+@media (orientation: landscape) {
+    .calc-elements{
+        display: flex;
+    }
+    .margin-elements{
+        margin: 0 0.6em;
+    }
+}
 .hero-content{
     display: flex;
     flex-direction: column;
@@ -145,6 +156,7 @@ nav a:focus{
         flex-direction: column;
         justify-content: space-between;
         font-size: 1.7rem;
+        width: 70%;
     }
     .hero-btn-section{
         display: flex;
@@ -153,6 +165,7 @@ nav a:focus{
     }
     .hero-img-section{
         justify-content: flex-end;
+        width: 30%;
     }
     .calc-hero-img{
         max-width: 75%;
@@ -238,6 +251,9 @@ nav a:focus{
 /* Colors General */
 .hero{
     background-color: var(--primary-color);
+}
+.app-info-section{
+    background-color: var(--secondary-accent-color);
 }
 .gray-text{
     color: gray;

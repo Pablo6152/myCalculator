@@ -21,5 +21,7 @@ paymentCalcBtn.addEventListener("click", function(){
         paymentResult = Math.round(baseSalary + bonus)
     }
     
-    paymentResultEl.textContent = paymentResult
+    paymentResultEl.innerHTML = `Approximately 
+    <span class="text-accent">${paymentResult}$ MXN</span>
+     (Mexican Pesos).`
 })
