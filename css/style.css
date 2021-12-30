@@ -328,7 +328,7 @@ nav a:focus{
     border-radius: 15px;
     text-shadow: rgb(0 0 0 / 12%) 0px 3px 8px;
     transition: all 0.5s ease 0s;
-    color: var(#fff);
+    color: #fff;
     border: 2px solid #fff;
 }
 .hero-btn:visited{
@@ -338,5 +338,5 @@ nav a:focus{
     color: var(--darkmode-toggle);
 }
 .hero{
-    background-color: rgba(0, 0, 0, 0.212);
+    background-color: rgba(0, 0, 0, 0.068);
 }
