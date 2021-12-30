@@ -48,7 +48,10 @@ h1, h2{
 a{
     text-decoration: none;
 }
-
+.darkmode-info{
+    font-size: .7rem;
+    color: gray;
+}
 /* Nav */
 .nav-header{
     background-color: var(--primary-color);
@@ -217,6 +220,10 @@ nav a:focus{
     padding: 0.3em 0.7em;
     transition: all 0.5s ease 0s;
 }
+.darkmode-container{
+    display: flex;
+    align-items: center;
+}
 /* Modals - Layout */
 #disclaimer-box{
     position: fixed;
@@ -233,12 +240,18 @@ nav a:focus{
     flex-direction: column;
     
     background-color: var(--primary-color);
+    color: var(--text-color);
     margin: 15% auto; /* 15% from the top and centered */
     padding: 1.3em;
-    border: 2px solid var(--secondary-color);
+    border: 2px solid var(--text-color);
     border-radius: 7px;
     width: 85%; /* Could be more or less, depending on screen size */
     align-items: center;
+}
+@media (orientation: landscape) {
+    #disclaimer-content{
+        width: 45%;
+    }
 }
 #disclaimer-box .btn {
     width: 40%;
