@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/snow.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment</title>
@@ -28,7 +29,7 @@
     </header>
 
 
-    <section class="width-container primary-color section-style">
+    <section class="width-container primary-color section-style test">
         <h2>Calculate your <span class="text-accent"> approximate payment</span>:</h2>
         <div class="calc-elements">
 
@@ -61,15 +62,16 @@
                     <input type="number" class="input input-color" id="dominical-el" placeholder="E.g. 8">
                 </div>
             </div>
-            
+
         </div>
 
-        
         <button id="payment-calculate" class="btn primary-btn">Calculate</button>
         <div class="result-box" id="payment-result"></div>
-        
     </section>
+
+    <canvas id="snow"></canvas>
     <script src="./js/theme.js"></script>
     <script src="./js/payment.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 </html>

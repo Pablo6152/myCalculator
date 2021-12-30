@@ -13,7 +13,7 @@ function setTheme(theme) {
     let root = document.documentElement;
     if (theme === 0) {
 
-        root.style.setProperty('--primary-color', '#f5f5fa');
+        root.style.setProperty('--primary-color', 'rgba(248, 248, 248, 0.836)');
         root.style.setProperty('--text-color', '#000');
         root.style.setProperty('--darkmode-toggle', 'rgb(255, 166, 0)');
         root.style.setProperty('--secondary-color', '#b6b7d5');
@@ -25,7 +25,7 @@ function setTheme(theme) {
         themeBtn.textContent = `brightness_7`
     } else if (theme === 1) {
 
-        root.style.setProperty('--primary-color', '#252525');
+        root.style.setProperty('--primary-color', 'rgba(37, 37, 37, 0.934)');
         root.style.setProperty('--text-color', '#fff');
         root.style.setProperty('--darkmode-toggle', '#fff');
         root.style.setProperty('--secondary-color', '#121212');

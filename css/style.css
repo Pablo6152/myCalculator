@@ -1,5 +1,5 @@
 :root{
-    --primary-color: #f5f5fa;
+    --primary-color: rgba(248, 248, 248, 0.836);
     --secondary-color: #b6b7d5;
     --text-color: #000;
     --darkmode-toggle: rgb(255, 166, 0);
@@ -113,6 +113,12 @@ nav a:focus{
 .width-container{
     max-width: 85%;
     margin: 0 auto;
+}
+@media (orientation: landscape){
+    .width-container{
+        max-width: 65%;
+        margin: 0 auto;
+    }
 }
 .section-style{
     display: flex;
@@ -268,7 +274,12 @@ nav a:focus{
     border-radius: 5px;
     border: solid 2px var(--text-color)
 }
-
+.test{
+    position: fixed;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.762); /* Black w/ opacity */
+}
 /* Colors General */
 .homepage-bg{
     background-image: linear-gradient(to right bottom, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
@@ -310,7 +321,7 @@ nav a:focus{
 }
 .input-color{
     border-bottom: solid var(--text-color) 1.5px;
-    background-color: var(--primary-color);
+    background: none;
     color: var(--text-color);
 }
 .primary-btn{
