@@ -1,7 +1,8 @@
 :root{
     --primary-color: #f5f5fa;
     --secondary-color: #b6b7d5;
-    --text-color: #121212;
+    --text-color: #000;
+    --darkmode-toggle: rgb(255, 166, 0);
     --primary-accent-color: #4E9F3D;
     --secondary-accent-color: #303F9F;
     --tertiary-accent-color: #D32F2F;
@@ -47,6 +48,7 @@ h1, h2{
 a{
     text-decoration: none;
 }
+
 /* Nav */
 .nav-header{
     background-color: var(--primary-color);
@@ -129,6 +131,12 @@ nav a:focus{
         margin: 0 0.6em;
     }
 }
+.hero{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
 .hero-content{
     display: flex;
     flex-direction: column;
@@ -171,7 +179,6 @@ nav a:focus{
         max-width: 75%;
     }
 }
-
 
 .material-icons{
     cursor: pointer;
@@ -242,15 +249,16 @@ nav a:focus{
     padding: 0.6em;
     background-color: var(--primary-color);
     color: var(--text-color);
-
+    
     text-align: center;
     border-radius: 5px;
     border: solid 2px var(--text-color)
 }
 
 /* Colors General */
-.hero{
-    background-color: var(--primary-color);
+.homepage-bg{
+    background-image: linear-gradient(to right bottom, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+    color: #fff;
 }
 .app-info-section{
     background-color: var(--secondary-accent-color);
@@ -305,7 +313,17 @@ nav a:focus{
 }
 .hero-btn{
     border-radius: 15px;
+    text-shadow: rgb(0 0 0 / 12%) 0px 3px 8px;
+    transition: all 0.5s ease 0s;
+    color: var(#fff);
+    border: 2px solid #fff;
+}
+.hero-btn:visited{
+    color: #fff;
 }
 .darkmode-toggle{
-    color: var(--text-color);
+    color: var(--darkmode-toggle);
+}
+.hero{
+    background-color: rgba(0, 0, 0, 0.212);
 }
