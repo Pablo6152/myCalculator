@@ -22,6 +22,7 @@ body{
     font-family: 'Montserrat', sans-serif;
     color: var(--text-color);
     background: var(--secondary-color);
+    line-height: 1.6;
 }
 img{
     width: 100%;
@@ -245,7 +246,7 @@ nav a:focus{
     padding: 1.3em;
     border: 2px solid var(--text-color);
     border-radius: 7px;
-    width: 85%; /* Could be more or less, depending on screen size */
+    width: 95%; /* Could be more or less, depending on screen size */
     align-items: center;
 }
 @media (orientation: landscape) {
