@@ -275,9 +275,10 @@ nav a:focus{
     border: solid 2px var(--text-color)
 }
 .test{
-    position: fixed;
+    position: absolute;
     left: 0;
     right: 0;
+    height: auto;
     background-color: rgba(0, 0, 0, 0.762); /* Black w/ opacity */
 }
 /* Colors General */
