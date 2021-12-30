@@ -31,8 +31,8 @@ paymentCalcBtn.addEventListener("click", function(){
 
     if (notWorkedHoursEl.valueAsNumber){
         notWorkedHours = moneyPerHour * notWorkedHoursEl.valueAsNumber
-        baseSalary = ((baseSalaryEl.valueAsNumber * 2) * (moneyPerHour)) - notWorkedHours
-        bonus = baseSalary * (bonusEl.valueAsNumber / 100)
+        baseSalary = ((baseSalaryEl.valueAsNumber * 2) * (moneyPerHour))
+        bonus = (baseSalary - notWorkedHours) * (bonusEl.valueAsNumber / 100)
 
         if (holidayBonusEl.valueAsNumber){
             holidayBonus = (moneyPerHour * holidayBonusEl.valueAsNumber) + (moneyPerHour * holidayBonusEl.valueAsNumber) * 2
@@ -42,7 +42,12 @@ paymentCalcBtn.addEventListener("click", function(){
         dominicalBonus = (moneyPerHour * dominicalEl.valueAsNumber) * .25
         } else {dominicalBonus === 0}
 
-        paymentResult = baseSalary + bonus + holidayBonus + dominicalBonus - notWorkedHours
+        //Fix hard-coded value pending
+        if (nightHoursEl.valueAsNumber){
+        nightHours = (10.53 * nightHoursEl.valueAsNumber)
+        } else {nightHours === 0}
+        
+        paymentResult = baseSalary + bonus + holidayBonus + dominicalBonus + nightHours - notWorkedHours
     } else {
         baseSalary = ((baseSalaryEl.valueAsNumber * 2) * (moneyPerHour))
         bonus = baseSalary * (bonusEl.valueAsNumber / 100)
@@ -55,8 +60,13 @@ paymentCalcBtn.addEventListener("click", function(){
             dominicalBonus = (moneyPerHour * dominicalEl.valueAsNumber) * .25
             } else {dominicalBonus === 0}
 
+        //Fix hard-coded value pending
+        if (nightHoursEl.valueAsNumber){
+            nightHours = (10.53 * nightHoursEl.valueAsNumber)
+            } else {nightHours === 0}
 
-        paymentResult = baseSalary + bonus + holidayBonus + dominicalBonus
+
+        paymentResult = baseSalary + bonus + holidayBonus + dominicalBonus + nightHours
     }
     
 
