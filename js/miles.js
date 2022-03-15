@@ -1,3 +1,5 @@
+import {loadTheme} from "./theme.js"
+
 const milesEl = document.getElementById("miles")
 const workingHoursEl = document.getElementById("working-hours")
 const milesCalcBtn = document.getElementById("miles-calculate")
@@ -18,4 +20,4 @@ milesCalcBtn.addEventListener("click", function(){
     }
 })
 
-// 
+loadTheme()

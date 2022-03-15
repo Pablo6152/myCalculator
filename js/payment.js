@@ -1,4 +1,6 @@
-const baseSalaryEl = document.getElementById("base-salary-el")
+import {loadTheme} from "./theme.js"
+
+const weeklyWorkHoursEl = document.getElementById("weekly-work-hours")
 const bonusEl = document.getElementById("bonus-el")
 const notWorkedHoursEl = document.getElementById("not-worked-hours-el")
 const holidayBonusEl = document.getElementById("holiday-bonus-el")
@@ -11,95 +13,76 @@ const totalEarnedEl = document.getElementById("total-earned-el")
 const totalNotWorkedEl = document.getElementById("total-not-worked-el")
 const totalPaidEl = document.getElementById("total-paid-el")
 
-const moneyPerHour = 30.38
-const nightHour = 10.53
-let baseSalary = 0
-let bonus = 0
-let notWorkedHours = 0
-let holidayBonus = 0
-let nightHours = 0
-let reposition = 0
-let dominicalBonus = 0
-let paymentResult = 0
-let totalEarned = 0
-let totalNotWorked = 0
-let totalPaid = 0
-
-function resetValues(){
-    baseSalary = 0
-    bonus = 0
-    notWorkedHours = 0
-    holidayBonus = 0
-    nightHours = 0
-    dominicalBonus = 0
-    paymentResult = 0
+//National values are not updated to current wages.
+const agentData = {
+    national: {
+        name: `Agente nacional (Español)`,
+        moneyPerHour: 19.95,
+        nightHour: 10.53,
+    },
+    bilingual: {
+        name: `Agente bilingüe (English)`,
+        moneyPerHour: 30.38,
+        nightHour: 10.53,
+    }
 }
 
-paymentCalcBtn.addEventListener("click", function(){
-    if (notWorkedHoursEl.valueAsNumber){
-        notWorkedHours = moneyPerHour * notWorkedHoursEl.valueAsNumber
-        baseSalary = ((baseSalaryEl.valueAsNumber * 2) * (moneyPerHour))
-        reposition = moneyPerHour * repositionEl.valueAsNumber
-        bonus = ((baseSalary - notWorkedHours) + reposition) * (bonusEl.valueAsNumber / 100)
+function PaymentCalculator(data){
+    Object.assign(this, data)
 
+    this.calculate = function(){
+        const {name, moneyPerHour, nightHour} = this
+        
+        let baseSalary = moneyPerHour * (weeklyWorkHoursEl.valueAsNumber * 2)
+        let notWorkedHours = moneyPerHour * notWorkedHoursEl.valueAsNumber
+
+        let reposition = 0
+        if(repositionEl.valueAsNumber){
+            reposition = moneyPerHour * repositionEl.valueAsNumber
+        }
+
+        let bonus = ((baseSalary - notWorkedHours) + reposition) * (bonusEl.valueAsNumber / 100)
+
+        let holidayBonus = 0
         if (holidayBonusEl.valueAsNumber){
             holidayBonus = (moneyPerHour * holidayBonusEl.valueAsNumber) * 2
-        } else {holidayBonus === 0}
+        }
 
-        if (dominicalEl.valueAsNumber){
-        dominicalBonus = (moneyPerHour * dominicalEl.valueAsNumber) * .25
-        } else {dominicalBonus === 0}
-
-        if (nightHoursEl.valueAsNumber){
-        nightHours = (nightHour * nightHoursEl.valueAsNumber)
-        } else {nightHours === 0}
-        
-        totalEarned = baseSalary + bonus + holidayBonus + dominicalBonus + nightHours + reposition
-        totalNotWorked = notWorkedHours
-        totalPaid = totalEarned - totalNotWorked
-
-    } else {
-        baseSalary = ((baseSalaryEl.valueAsNumber * 2) * (moneyPerHour))
-        bonus = (baseSalary + reposition) * (bonusEl.valueAsNumber / 100)
-
-        if (holidayBonusEl.valueAsNumber){
-            holidayBonus = (moneyPerHour * holidayBonusEl.valueAsNumber) * 2
-        } else {holidayBonus === 0}
-        
+        let dominicalBonus = 0
         if (dominicalEl.valueAsNumber){
             dominicalBonus = (moneyPerHour * dominicalEl.valueAsNumber) * .25
-            } else {dominicalBonus === 0}
+        }
 
+        let nightHours = 0
         if (nightHoursEl.valueAsNumber){
             nightHours = (nightHour * nightHoursEl.valueAsNumber)
-            } else {nightHours === 0}
+        }
 
-        
-        totalEarned = baseSalary + bonus + holidayBonus + dominicalBonus + nightHours + reposition
-        totalNotWorked = notWorkedHours
-        totalPaid = totalEarned - totalNotWorked
+        let totalEarned = baseSalary + bonus + holidayBonus + reposition + nightHours + dominicalBonus
+        let totalPaid = totalEarned - notWorkedHours
+
+        console.log(`
+        Agent name: ${name},
+        Base salary: ${baseSalary}, 
+        Not worked hours: ${notWorkedHours}, 
+        Bonus: ${bonus}
+        Night hours: ${nightHours}
+        Holiday bonus: ${holidayBonus}
+        Dominical bonus: ${dominicalBonus}
+        TotalEarned: ${totalEarned}
+        Not worked: ${notWorkedHours}
+        TotalPaid: ${totalPaid}
+        `)
     }
-    
-    // paymentResultEl.innerHTML = `Approximately 
-    // <span class="text-accent">${paymentResult}$ MXN</span>
-    // (Mexican Pesos).`
+}
 
-    totalEarnedEl.textContent = `$ ${totalEarned}`
-    totalNotWorkedEl.textContent = `$ ${totalNotWorked}`
-    totalPaidEl.textContent = `$ ${totalPaid}`
-    
-    console.log(`Base salary: ${baseSalary}`)
-    console.log(`Reposition: ${reposition}`)
-    console.log(`Bonus: ${bonus}`)
-    console.log(`Holiday bonus: ${holidayBonus}`)
-    console.log(`Dominical bonus: ${dominicalBonus}`)
-    console.log(`Night hours: ${nightHours}`)
-    console.log(`Not worked hours: ${notWorkedHours}`)
-    console.log(`Total payment: ${paymentResult}`)
+const makeNationalPayment = new PaymentCalculator(agentData.national)
+const makeBilingualPayment = new PaymentCalculator(agentData.bilingual)
 
-    resetValues()
-
+paymentCalcBtn.addEventListener("click", function(){
+    makeNationalPayment.calculate()
+    makeBilingualPayment.calculate()
 })
 
 
-
+loadTheme()

@@ -3,9 +3,11 @@ const themeBtn = document.getElementById("theme-btn")
 
 
 // When page loads
-if (JSON.parse(darkmode)){
-    setTheme(1)
-} else {themeBtn.textContent = `brightness_7`}
+function loadTheme(){
+    if (JSON.parse(darkmode)){
+        setTheme(1)
+    } else {themeBtn.textContent = `brightness_7`}
+}
 
 
 // Dark mode
@@ -45,3 +47,6 @@ themeBtn.addEventListener("click", function(){
         setTheme(0)
     }
 })
+
+
+export {loadTheme}
