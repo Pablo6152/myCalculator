@@ -39,7 +39,7 @@ li{
 h1, h2{
     font-weight: 300;
     text-align: center;
-    font-size: 1.6rem;
+    font-size: 1.3rem;
 }
 .section-style h2{
     margin-bottom: .5em;
@@ -55,6 +55,28 @@ a{
     color: gray;
 }
 /* Nav */
+#site-title{
+    order: -1;
+}
+.ui-controls{
+    order: 2;
+    margin-top: 0.3em;
+}
+#nav-container{
+    order: 1;
+}
+@media (orientation: landscape){
+    #site-title{
+        order: -1;
+    }
+    .ui-controls{
+        order: 1;
+        margin-top: 0.3em;
+    }
+    #nav-container{
+        order: 2;
+    }
+}
 .nav-header{
     background-color: var(--primary-color);
     color: var(--text-color);
@@ -108,7 +130,12 @@ nav a:focus{
     .nav-links{
         display: flex;
     }
-
+    #toggle-navbar{
+        display: none;
+    }
+    #nav-links-container{
+        display: flex;
+    }
 }
 /* Layout */
 .width-container{
@@ -206,6 +233,9 @@ nav a:focus{
     border-radius: 7px;
     outline: 0;
     cursor: pointer;
+}
+.ui-nav-buttons{
+    margin: 0 0.5em;
 }
 .input{
     padding: 0.6em 1em;

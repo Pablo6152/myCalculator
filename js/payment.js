@@ -1,4 +1,6 @@
 import {loadTheme} from "./theme.js"
+import { checkDisclaimerModal } from "./index.js"
+import {toggleNavBtn, checkNavMode} from "./utils.js"
 
 const weeklyWorkHoursEl = document.getElementById("weekly-work-hours")
 const bonusEl = document.getElementById("bonus-el")
@@ -84,6 +86,7 @@ function PaymentCalculator(data){
         totalNotWorkedEl.textContent = `${notWorkedHours}`
         totalPaidEl.textContent = `${Math.round(totalPaid * 100) / 100}`
     }
+
 }
 
 const makeNationalPayment = new PaymentCalculator(agentData.national)
@@ -96,3 +99,5 @@ paymentCalcBtn.addEventListener("click", function(){
 
 
 loadTheme()
+checkDisclaimerModal()
+checkNavMode()

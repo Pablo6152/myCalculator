@@ -1,8 +1,10 @@
 let disclaimerAccepted = localStorage.getItem("disclaimerAccepted")
 const disclaimerBtn = document.getElementById("accept-disclaimer-btn")
 
-if (JSON.parse(disclaimerAccepted)){
-    closeModal()
+function checkDisclaimerModal(){
+    if (JSON.parse(disclaimerAccepted)){
+        closeModal()
+    }
 }
 
 // Modals
@@ -14,3 +16,8 @@ disclaimerBtn.addEventListener("click", function(){
 function closeModal(){
     document.getElementById("disclaimer-box").style.display = "none"
 }
+
+
+checkDisclaimerModal()
+
+export {checkDisclaimerModal, disclaimerBtn}

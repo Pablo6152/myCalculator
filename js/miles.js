@@ -1,4 +1,6 @@
 import {loadTheme} from "./theme.js"
+import { checkDisclaimerModal } from "./index.js"
+import {toggleNavBtn, checkNavMode} from "./utils.js"
 
 const milesEl = document.getElementById("miles")
 const workingHoursEl = document.getElementById("working-hours")
@@ -21,3 +23,5 @@ milesCalcBtn.addEventListener("click", function(){
 })
 
 loadTheme()
+checkDisclaimerModal()
+checkNavMode()
