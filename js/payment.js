@@ -34,7 +34,11 @@ function PaymentCalculator(data){
         const {name, moneyPerHour, nightHour} = this
         
         let baseSalary = moneyPerHour * (weeklyWorkHoursEl.valueAsNumber * 2)
-        let notWorkedHours = moneyPerHour * notWorkedHoursEl.valueAsNumber
+
+        let notWorkedHours = 0
+        if(notWorkedHoursEl.valueAsNumber){
+            notWorkedHours = moneyPerHour * notWorkedHoursEl.valueAsNumber
+        }
 
         let reposition = 0
         if(repositionEl.valueAsNumber){
@@ -62,17 +66,23 @@ function PaymentCalculator(data){
         let totalPaid = totalEarned - notWorkedHours
 
         console.log(`
+
         Agent name: ${name},
         Base salary: ${baseSalary}, 
         Not worked hours: ${notWorkedHours}, 
-        Bonus: ${bonus}
-        Night hours: ${nightHours}
-        Holiday bonus: ${holidayBonus}
-        Dominical bonus: ${dominicalBonus}
-        TotalEarned: ${totalEarned}
-        Not worked: ${notWorkedHours}
+        Bonus: ${bonus},
+        Night hours: ${nightHours},
+        Holiday bonus: ${holidayBonus},
+        Dominical bonus: ${dominicalBonus},
+        TotalEarned: ${totalEarned},
+        Not worked: ${notWorkedHours},
         TotalPaid: ${totalPaid}
+
         `)
+
+        totalEarnedEl.textContent = `${Math.round(totalEarned * 100) / 100}`
+        totalNotWorkedEl.textContent = `${notWorkedHours}`
+        totalPaidEl.textContent = `${Math.round(totalPaid * 100) / 100}`
     }
 }
 
