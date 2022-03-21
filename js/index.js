@@ -1,23 +1,15 @@
-let disclaimerAccepted = localStorage.getItem("disclaimerAccepted")
-const disclaimerBtn = document.getElementById("accept-disclaimer-btn")
+import {loadTheme} from "./theme.js"
+import {checkNavMode} from "./navBar.js"
+import {checkDisclaimerModal} from "./disclaimer.js"
 
-function checkDisclaimerModal(){
-    if (JSON.parse(disclaimerAccepted)){
-        closeModal()
+function checkIndicatorsStatus(){
+    loadTheme()
+    checkDisclaimerModal()
+    if (document.getElementById("ui-controls")){
+        checkNavMode()
     }
 }
 
-// Modals
-disclaimerBtn.addEventListener("click", function(){
-    closeModal()
-    localStorage.setItem("disclaimerAccepted", "1")
-})
+checkIndicatorsStatus()
 
-function closeModal(){
-    document.getElementById("disclaimer-box").style.display = "none"
-}
-
-
-checkDisclaimerModal()
-
-export {checkDisclaimerModal, disclaimerBtn}
+export {checkIndicatorsStatus}

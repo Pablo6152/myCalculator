@@ -58,7 +58,7 @@ a{
 #site-title{
     order: -1;
 }
-.ui-controls{
+#ui-controls{
     order: 2;
     margin-top: 0.3em;
 }
@@ -69,7 +69,7 @@ a{
     #site-title{
         order: -1;
     }
-    .ui-controls{
+    #ui-controls{
         order: 1;
         margin-top: 0.3em;
     }

@@ -1,6 +1,5 @@
-import {loadTheme} from "./theme.js"
-import { checkDisclaimerModal } from "./index.js"
-import {toggleNavBtn, checkNavMode} from "./utils.js"
+import { checkIndicatorsStatus } from "../index.js"
+checkIndicatorsStatus()
 
 const milesEl = document.getElementById("miles")
 const workingHoursEl = document.getElementById("working-hours")
@@ -21,7 +20,3 @@ milesCalcBtn.addEventListener("click", function(){
         milesResultEl.textContent = "Please enter values in both fields."
     }
 })
-
-loadTheme()
-checkDisclaimerModal()
-checkNavMode()

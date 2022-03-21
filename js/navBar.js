@@ -41,4 +41,4 @@ function toggleNavbar(){
     
 }
 
-export {toggleNavBtn, checkNavMode}
+export {checkNavMode}
