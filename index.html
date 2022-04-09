@@ -7,48 +7,42 @@
     <link rel="shortcut icon" href="https://www.svgrepo.com/show/8368/calculator.svg" type="image/x-icon">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/generalStyle.css">
+    <link rel="stylesheet" href="./css/index.css">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My calculator</title>
 </head>
-<body class="homepage-bg">
-    <div id="disclaimer-box">
-        <div id="disclaimer-content">
-            <p>This web-app is not intended for commercial use, it's totally free and have been created just for fun,
-                if there is a problem with this app you can comunicate with me at:
-            </p>
-            <p class="email-box">pablocisnerosrojas@gmail.com</p>
-            <button id="accept-disclaimer-btn" class="btn primary-btn">Accept</button>
-            <div class="darkmode-container">
-                <i id="theme-btn" class="material-icons darkmode-toggle">brightness_2</i>
-                <p class="darkmode-info">(Change to dark/light mode)</p>
-                <i class="material-icons ui-nav-buttons" id="toggle-navbar" style="display: none;">dehaze</i>
+
+<body>
+
+    <div class="welcome-bg">
+
+        <section class="site-title-container">
+
+                <div class="site-title">
+                    <h1>Calculate your payment</h1>
+                    <p>The simple way</p>
+                </div>
+            
+        </section>
+
+        <div class="language-theme-selector">
+
+            <p class="instructions-text">Select your preferred language and theme</p>
+
+            <div class="user-preference-buttons">
+                <input type="text" class="language-el language-input language-input-color" value="English"></input>
+                <i id="theme-btn" class="material-icons darkmode-toggle ui-nav-buttons">brightness_2</i>
             </div>
+
+            <a class="btn btn-color" href="./html/appIntro/disclaimer.html"><i class="material-icons next-btn">navigate_next</i></a>
+            
         </div>
+
     </div>
 
-    <header class="nav-header" style="display: none;">
-    </header>
-
-    <section class="hero">
-        <div class="width-container hero-content">
-
-            <div class="hero-info">
-
-                <h2 class="hero-title">Calculate your paycheck or miles, effortlesly.</h2>
-                <p>Click one of the buttons below to start calculating:</p>
-                <div class="hero-btn-section">
-                    <a href="./miles.html" class="btn hero-btn">Miles</a>
-                    <a href="./payment.html" class="btn hero-btn">Payment</a>
-                </div>
-
-            </div>
-            <div class="hero-img-section">
-                <img src="./img/calculator.svg" alt="calculator" class="calc-hero-img">
-            </div>
-        </div>
-    </section>
 
     <script src="./js/index.js" type="module"></script>
 </body>

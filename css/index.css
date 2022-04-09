@@ -1,0 +1,107 @@
+body{
+    color: var(-text-color);
+}
+h1{
+    text-align: center;
+    font-weight: 400;
+}
+i{
+    cursor: pointer;
+}
+.instructions-text{
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.welcome-bg{
+    background: var(--secondary-color);
+    color: var(--text-color);
+    height: 100%;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+.layout-container{
+    margin: 0 auto;
+    width: 80%;
+}
+.site-title-container{
+    height: 30%;
+}
+.site-title{
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    font-size: 1.7rem;
+    height: 100%;
+
+}
+.language-theme-selector{
+    background-color: var(--primary-color);
+
+    border-top-right-radius: 42px;
+    border-top-left-radius: 42px;
+
+    height: 70%;
+
+    padding: 1em;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.user-preference-buttons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Elements */
+.language-el{
+    display: block;
+    margin-bottom: 1em;
+}
+
+/* Btn & input */
+.language-input{
+    padding: 0.5em 0.9em;
+
+    outline: none;
+    border: 1px var(--text-color) solid;
+    border-radius: 15px;
+
+
+    margin-bottom: 2em;
+
+    font-size: 1.5rem;
+    text-align: center;
+}
+.language-input-color{
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+.btn{
+    padding: 0.1em 4em;
+    cursor: pointer;
+    
+    outline: none;
+    border: none;
+    border-radius: 85px;
+}
+.btn-color{
+    background-color: var(--secondary-accent-color);
+    color: var(--text-color);
+}
+.next-btn{
+    font-size: 4rem;
+}
+#theme-btn{
+    font-size: 2.5rem;
+}

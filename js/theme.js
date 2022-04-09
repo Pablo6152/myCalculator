@@ -20,19 +20,19 @@ function setTheme(theme) {
         root.style.setProperty('--darkmode-toggle', 'rgb(255, 166, 0)');
         root.style.setProperty('--secondary-color', '#b6b7d5');
         root.style.setProperty('--accent-color', '#4E9F3D'); 
-        root.style.setProperty('--secondary-accent-color', '#03A9F4');
+        root.style.setProperty('--secondary-accent-color', '#3246C5');
         
         localStorage.setItem("darkmode", "0")
 
         themeBtn.textContent = `brightness_7`
     } else if (theme === 1) {
 
-        root.style.setProperty('--primary-color', 'rgba(37, 37, 37, 0.934)');
+        root.style.setProperty('--primary-color', '#212121');
         root.style.setProperty('--text-color', '#fff');
         root.style.setProperty('--darkmode-toggle', '#fff');
         root.style.setProperty('--secondary-color', '#121212');
         root.style.setProperty('--accent-color', '#5fc44b'); 
-        root.style.setProperty('--secondary-accent-color', '#303F9F'); 
+        root.style.setProperty('--secondary-accent-color', '#3246C5'); 
         
         localStorage.setItem("darkmode", "1")
 
