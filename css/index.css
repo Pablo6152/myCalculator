@@ -12,7 +12,6 @@ i{
     font-size: 1.3rem;
     text-align: center;
 }
-
 .welcome-bg{
     background: var(--secondary-color);
     color: var(--text-color);
@@ -24,23 +23,19 @@ i{
     justify-content: space-between;
 
 }
-.layout-container{
-    margin: 0 auto;
-    width: 80%;
-}
-.site-title-container{
-    height: 30%;
-}
 .site-title{
     text-align: center;
-
+    
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 
     font-size: 1.7rem;
     height: 100%;
-
+    
+}
+.site-title-container{
+    min-height: 40%;
 }
 .language-theme-selector{
     background-color: var(--primary-color);
@@ -48,7 +43,7 @@ i{
     border-top-right-radius: 42px;
     border-top-left-radius: 42px;
 
-    height: 70%;
+   min-height: 60%;
 
     padding: 1em;
 
@@ -64,24 +59,31 @@ i{
 }
 
 /* Elements */
-.language-el{
-    display: block;
-    margin-bottom: 1em;
+.page-width{
+    width: 90%;
+    margin: 0 auto;
 }
-
 /* Btn & input */
 .language-input{
-    padding: 0.5em 0.9em;
+    display: block;
+    margin-bottom: 1em;
+    padding: 1em 0;
+
 
     outline: none;
     border: 1px var(--text-color) solid;
     border-radius: 15px;
 
-
+    width: 100%;
     margin-bottom: 2em;
 
     font-size: 1.5rem;
     text-align: center;
+}
+@media (orientation: landscape){
+    .language-input{
+        width: 50%;
+    }
 }
 .language-input-color{
     background-color: var(--primary-color);
@@ -101,6 +103,7 @@ i{
 }
 .next-btn{
     font-size: 4rem;
+    color: #fff;
 }
 #theme-btn{
     font-size: 2.5rem;

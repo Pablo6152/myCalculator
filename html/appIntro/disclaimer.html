@@ -16,13 +16,12 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <i id="theme-btn" class="material-icons darkmode-toggle ui-nav-buttons">brightness_2</i>
     <!-- <div id="disclaimer-box">
     <div id="disclaimer-content">
-        <p>This web-app is not intended for commercial use, it's totally free and have been created just for fun,
-            if there is a problem with this app you can comunicate with me at:
+        <p>
         </p>
-        <p class="email-box">pablocisnerosrojas@gmail.com</p>
+        
         <button id="accept-disclaimer-btn" class="btn primary-btn">Accept</button>
         <div class="darkmode-container">
             <i id="theme-btn" class="material-icons darkmode-toggle">brightness_2</i>
@@ -32,11 +31,11 @@
     </div>
 </div> -->
 
-<div class="welcome-bg">
+<div class="disclaimer-bg">
 
     <section class="site-title-container">
 
-            <div class="disclaimer-title">
+            <div class="disclaimer-header">
                 <h1>First things first...</h1>
             </div>
         
@@ -44,14 +43,18 @@
 
     <div class="language-theme-selector">
 
-        <p class="instructions-text">Select your preferred language and theme</p>
+        <h2 class="disclaimer-title">Disclaimer</h2>
 
-        <div class="user-preference-buttons">
-            <input type="text" class="language-el language-input language-input-color" value="English"></input>
-            <i id="theme-btn" class="material-icons darkmode-toggle ui-nav-buttons">brightness_2</i>
+        <div class="disclaimer-container page-width">
+            <p class="disclaimer-text">This web-app is not intended for commercial use, it's totally free and have been created just for fun,
+                if there is a problem with this app you can comunicate with me at:</p>
+                <p class="email-box page-width">pablocisnerosrojas@gmail.com</p>
         </div>
 
-        <a class="btn btn-color" href="./html/appIntro/disclaimer.html"><i class="material-icons next-btn">navigate_next</i></a>
+        <div class="user-buttons page-width">
+            <a href="/index.html" class="ui-btn back-btn-color">Exit app</a>
+            <a href="/html/appIntro/modeSelection.html" class="ui-btn next-btn-color">Accept</a>
+        </div>
         
     </div>
 
