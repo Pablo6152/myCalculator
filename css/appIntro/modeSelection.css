@@ -1,9 +1,11 @@
-
-
+/* *{
+    border: 1px red solid;
+} */
 
 /* Page layout */
 .modeSelection-bg{
     background: var(--secondary-color);
+    
     color: var(--text-color);
     height: 100%;
 
@@ -29,6 +31,7 @@
 }
 .mode-selector-container{
     background-color: var(--primary-color);
+    
 
     border-top-right-radius: 42px;
     border-top-left-radius: 42px;
@@ -46,6 +49,9 @@
     display: flex;
     flex-direction: column;
 }
+.checkbox-container{
+    margin: 1em 0;
+}
 .user-buttons{
     display: flex;
     justify-content: space-between;
@@ -61,6 +67,23 @@
     padding: 0.7em 1.5em;
     border-radius: 50px;
 }
+
+
+.checkbox-container{
+    border: 2px var(--secondary-accent-color) solid;
+    border-radius: 14px;
+    padding: 1em;
+    font-size: 0.8rem;
+}
+.checkbox-container:focus,
+.checkbox-container:hover{
+    background-color: var(--secondary-accent-color);
+}
+
+#english-agent{
+    background-color: var(--tertiary-accent-color);
+}
+
 .back-btn-color{
     background-color: #303030;
     color: #fff;

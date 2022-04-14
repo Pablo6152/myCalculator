@@ -29,17 +29,21 @@
         <div class="mode-selector-container">
             <h2>I am...</h2>
             <div class="page-width mode-selector-user-checkbox">
-                <input type="checkbox" name="spanish-agent" id="">
-                <label for="spanish-agent">Agente nacional (Solo español)</label>
+                <div class="checkbox-container">
+                    <input type="radio" name="spanish-agent" id="spanish-agent">
+                    <label for="spanish-agent">Agente nacional (Solo español)</label>
+                </div>
                 
 
-                <input type="checkbox" name="bilingual-agent" id="">
-                <label for="bilingual-agent">Agente bilingüe (Español e Inglés)</label>
+                <div class="checkbox-container">
+                    <input type="radio" name="english-agent" id="english-agent">
+                    <label for="english-agent" class="test">Agente bilingüe (Español e Inglés)</label>
+                </div>
             </div>
     
             <div class="user-buttons page-width">
                 <a href="/html/appIntro/disclaimer.html" class="ui-btn back-btn-color">Exit app</a>
-                <a href="/html/appIntro/modeSelection.html" class="ui-btn next-btn-color">Accept</a>
+                <a href="/html/mainApp/mainMenu.html" class="ui-btn next-btn-color">Accept</a>
             </div>
         </div>
 
