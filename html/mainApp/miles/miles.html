@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="https://www.svgrepo.com/show/8368/calculator.svg" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/generalStyle.css">
+    <link rel="stylesheet" href="/css/mainApp/miles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miles</title>
+</head>
+<body>
+    <i id="theme-btn" class="material-icons darkmode-toggle ui-nav-buttons">brightness_2</i>
+
+    <div class="main-bg">
+        <header class="app-topbar">
+            <nav class="topbar-items uibar-width">
+                <i class="material-icons" id="sidebar-btn">menu</i>
+                <h2 class="main-menu-title">Miles</h2>
+                <i class="material-icons">more_vert</i>
+        
+            </nav>
+        </header>
+
+        <section class="content-width miles-app-mainscreen">
+            <div class="calc-item">
+                <h2>Your miles</h2>
+                <input type="number" class="input input-color"  id="miles" placeholder="E.g. 880">
+            </div>
+            <div class="calc-item">
+                <h2>Your weekly work hours</h2>
+                <input type="number" class="input input-color" id="working-hours" placeholder="E.g. 48">
+            </div>
+            <button id="miles-calculate" class="miles-btn miles-btn-color">Calculate</button>
+            <div class="result-box" id="miles-result"></div>
+        </section>
+
+    </div>
+    
+    <script src="/js/miles/index.js" type="module"></script>
+</body>
+</html>
