@@ -7,7 +7,7 @@ const agentData = {
     },
     bilingual: {
         name: `Agente bilingüe (English)`,
-        moneyPerHour: 30.38,
+        moneyPerHour: 54.93,
         nightHour: 10.53,
     }
 }
