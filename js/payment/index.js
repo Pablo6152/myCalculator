@@ -23,7 +23,7 @@ class PaymentCalculator{
     calculate(){
         const {name, moneyPerHour, nightHour} = this
         
-        let baseSalary = moneyPerHour * (weeklyWorkHoursEl.valueAsNumber * 2)
+        let baseSalary = moneyPerHour * (weeklyWorkHoursEl.valueAsNumber)
 
         const notWorkedHours = notWorkedHoursEl.valueAsNumber ? moneyPerHour * notWorkedHoursEl.valueAsNumber : 0
         const reposition = repositionEl.valueAsNumber ? moneyPerHour * repositionEl.valueAsNumber : 0
